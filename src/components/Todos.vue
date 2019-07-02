@@ -1,6 +1,11 @@
 <!-- anything wrapped around the template element represents the markup we render on the screen -->
 <template>
   <div>
+    <!--
+      v-for directive allows us to loop through the todos prop array we passed down from our app component.
+      "todo" is the variable we name each of our elements as we loop through it. v-bind:key is how to give a 
+      unique key value to each element (similar to React) so Vue can make page changes efficient
+    -->
     <div v-bind:key="todo.id" v-for="todo in todos">
       <h3>{{ todo.title }}</h3>
     </div>
