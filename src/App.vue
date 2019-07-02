@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <!-- v-bind:"todos" is passing our todos data as a "todos" prop to the Todos component -->
-    <Todos v-bind:todos="todos" />
+    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" />
+    <!-- 
+      v-on:del-todo is a event listener we created ourself to do something to our data. The "del-todo" is a
+      message we emitted upwards from a lower component nested a couple of levels deep. It passed the id of the
+      todo we wanted to deleted as a payload
+    -->
   </div>
 </template>
 
@@ -22,6 +27,12 @@ export default {
         { id: 3, title: "Todo Three", completed: true }
       ]
     };
+  },
+  methods: {
+    deleteTodo(id) {
+      //since this method was called for the del-todo event listener, the payload is passed in as an argument
+      this.todos = this.todos.filter(todo => todo.id !== id);
+    }
   }
 };
 </script>
