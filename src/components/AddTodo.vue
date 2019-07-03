@@ -5,7 +5,7 @@
         @submit is syntactic sugar for v-on:submit
         when the form is submitted, we call the addTodo method
       -->
-      <input type="text" v-model="title" name="title" placeholder="Add Todo..." />
+      <input class="todo-submission" type="text" v-model="title" name="title" placeholder="Add Todo..." />
       <!-- 
         v-model binds the value that's inside of the input with the value of our data within this component.
         In this case, we're binding the input's value to the title key in our data object
