@@ -28,7 +28,7 @@ export default {
   name: "TodoItem",
   props: ["todo"],
   methods: {
-    markComplete(event) {
+    markComplete() {
       this.todo.completed = !this.todo.completed; //accessing the todo object from our props and reassigning it with an inverse value
     }
   }
